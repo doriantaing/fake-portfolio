@@ -6,11 +6,11 @@ import Login from './components/layouts/login';
 import LoginHeader from './components/layouts/login-header';
 import LoginBody from './components/layouts/login-body';
 import LoginFooter from './components/layouts/login-footer';
-import Title from '../../fake-portfolio/client/src/components/atoms/title';
-import InputGroup from '../../fake-portfolio/client/src/components/atoms/input-group';
-import Label from '../../fake-portfolio/client/src/components/atoms/label';
-import Input from '../../fake-portfolio/client/src/components/atoms/input';
-import Button from '../../fake-portfolio/client/src/components/atoms/button';
+import Title from './components/atoms/title';
+import InputGroup from './components/atoms/input-group';
+import Label from './components/atoms/label';
+import Input from './components/atoms/input';
+import Button from './components/atoms/button';
 import Content from './components/layouts/content';
 
 const App = () => {
