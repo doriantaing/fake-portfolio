@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
-    "develop": "strapi develop",
+    "develop": "strapi develop --no-build",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
@@ -21,13 +21,13 @@
     "strapi-plugin-upload": "3.0.0-beta.20",
     "strapi-connector-bookshelf": "3.0.0-beta.20",
     "knex": "<0.20.0",
-    "pg": "latest"
+    "sqlite3": "latest"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "b70d43b5-46d8-4f59-87ac-62a815473693"
+    "uuid": "7427901f-bb5f-4f5f-ae57-5edbed061ee7"
   },
   "engines": {
     "node": ">=10.0.0",
