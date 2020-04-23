@@ -2,7 +2,7 @@ import * as WebFont from "webfontloader";
 
 export const loadFonts = WebFont.load({
   google: {
-    families: ['Red Hat Display:900', 'Questrial']
+    families: ['Red Hat Display:400,900', 'Questrial']
   }
 });
 

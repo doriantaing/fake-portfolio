@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "setup": "(cd server && npm install) & cd front && npm install",
     "dev": "(cd server && npm run develop) & cd front && npm run start"
   }
 }

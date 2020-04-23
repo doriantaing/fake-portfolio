@@ -8,12 +8,12 @@ const categories = {
   tertiary: TertiaryTitle
 };
 
-export const TypograpyTitle = ({ children, category }) => {
-  const Title = categories[category || "primary"];
-  return <Title>{ children }</Title>
+export const Title = ({ children, category }) => {
+  const TitleElement = categories[category || "primary"];
+  return <TitleElement>{ children }</TitleElement>
 };
 
-TypograpyTitle.propTypes = {
+Title.propTypes = {
   children: PropTypes.element.isRequired,
   category: PropTypes.oneOf(['primary','secondary','tertiary']).isRequired
 };
