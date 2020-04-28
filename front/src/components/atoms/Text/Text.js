@@ -5,19 +5,19 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const types = {
-  text: {
+  defaultText: {
     fontSize: '16px',
     lineHeight: '24px',
     fontWeight: 'normal',
     fontFamily: Fonts.questrial
   },
-  buttonTitle: {
+  mediumText: {
     fontSize: '16px',
     lineHeight: '24px',
     fontWeight: 900,
     fontFamily: Fonts.redHat
   },
-  buttonSmall: {
+  smallText: {
     fontSize: '14px',
     lineHeight: '24px',
     fontWeight: 'normal',
@@ -39,17 +39,24 @@ const StyledText = styled.p`
   color: ${ props => colors[props.color] };
 `;
 
-export const Text = ({ children, type, color  }) => (
+export const Text = ({ children, type, color, testId  }) => (
   <StyledText
     type={type}
     color={color}
+    data-testid={testId}
   >
     { children }
   </StyledText>
 );
 
+Text.defaultProps = {
+  type: 'defaultText',
+  color: 'primary'
+};
+
 Text.propTypes = {
-  children: PropTypes.element.isRequired,
-  type: PropTypes.oneOf(['text', 'buttonTitle', 'buttonSmall']).isRequired,
-  color: PropTypes.oneOf(['primary', 'secondary', 'tertiary']).isRequired
+  children: PropTypes.string,
+  type: PropTypes.oneOf(Object.keys(types)).isRequired,
+  color: PropTypes.oneOf(Object.keys(colors)).isRequired,
+  testId: PropTypes.string
 };
