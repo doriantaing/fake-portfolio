@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import * as PropTypes from "prop-types";
 import {
-  GalleryContainer,
+  GalleryContainer, GalleryDescription,
   GalleryImg,
   GalleryList,
   GalleryListItem,
-  GalleryTitle
 } from "./GalleryProject.styles";
 import SliderDots from "components/atoms/SliderDots/SliderDots";
 import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
-import * as PropTypes from "prop-types";
+import Title from "components/atoms/Title/Title";
 
 const GalleryProject = ({ data }) => {
   const [activeProject, setActive] = useState(0);
@@ -17,6 +17,7 @@ const GalleryProject = ({ data }) => {
     setListWidth(isPrev ? listWidth + 530 : listWidth - 530);
     setActive(isPrev ? activeProject - 1 : activeProject + 1);
   };
+  const projectTitle = `0${data[activeProject].id}/ ${data[activeProject].title}`;
 
   return (
     <GalleryContainer>
@@ -27,13 +28,15 @@ const GalleryProject = ({ data }) => {
           </GalleryListItem>
         ))}
       </GalleryList>
-      <SliderArrows
-        currentSlide={activeProject}
-        sliderLength={data.length}
-        prevAction={slideActions}
-        nextAction={slideActions}
-      />
-      <GalleryTitle>{ data[activeProject].title }</GalleryTitle>
+      <GalleryDescription>
+        <SliderArrows
+          currentSlide={activeProject}
+          sliderLength={data.length}
+          prevAction={slideActions}
+          nextAction={slideActions}
+        />
+        <Title type="projectTitle" isUppercase={true}>{ projectTitle }</Title>
+      </GalleryDescription>
       <SliderDots activeSlide={activeProject} slideData={data} />
     </GalleryContainer>
   )

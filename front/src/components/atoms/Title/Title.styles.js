@@ -27,3 +27,12 @@ export const TertiaryTitle = styled.h3`
     text-transform: ${ props => props.textUppercase ? "uppercase" : "none" };
     margin: 0;
 `;
+
+export const ProjectTitle = styled.h3`
+    font-family: ${ props => props.theme.fonts.redHat };
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    color: ${ props => props.theme.colors.blue };
+    text-transform: ${ props => props.textUppercase ? "uppercase" : "none" };
+`;
