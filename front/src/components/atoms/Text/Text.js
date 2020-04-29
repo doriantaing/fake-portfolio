@@ -20,7 +20,7 @@ const types = {
     fontSize: '14px',
     lineHeight: '24px',
     fontWeight: 'normal',
-      fontFamily: theme.fonts.redHat
+    fontFamily: theme.fonts.redHat
   },
     buttonNav: {
     fontSize: '16px',
@@ -35,7 +35,8 @@ const colors = {
   primary: theme.colors.black,
   secondary: theme.colors.red,
   tertiary: theme.colors.grey,
-  blue: theme.colors.blue
+  blue: theme.colors.blue,
+  white: theme.colors.white,
 };
 
 const StyledText = styled.p`
