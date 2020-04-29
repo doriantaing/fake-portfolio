@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from "components/layouts/Container";
+import { Container } from "components/layouts/container";
 
 export const GalleryContainer = styled(Container)`
   margin-right: 0;
@@ -11,7 +11,7 @@ export const GalleryList = styled.ul`
   padding: 0;
   display: flex;
   align-items: center;
-  overflow: scroll;
+  overflow: hidden;
 `;
 
 export const GalleryListItem = styled.li`
@@ -32,19 +32,3 @@ export const GalleryImg = styled.img`
 `;
 
 export const GalleryTitle = styled.h2``;
-
-export const GalleryDots = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const GalleryDotsItem = styled.div`
-  width: ${ props => props.isActive ? 16 : 8 }px;
-  height: 8px;
-  background: ${ props => props.theme.colors.blue };
-  opacity: ${ props => props.isActive ? 1 : .25 };
-  transition: .5s;
-  &:not(:last-child) {
-    margin-right: .5rem;
-  }
-`;

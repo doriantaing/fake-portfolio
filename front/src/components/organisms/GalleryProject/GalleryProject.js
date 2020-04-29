@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   GalleryContainer,
   GalleryDots, GalleryDotsItem,
@@ -36,11 +36,6 @@ const GalleryProject = () => {
     }
   };
 
-  useEffect(() => {
-    // const { current } = galleryList;
-    // current.style.width = (506 * current.children.length) + "px";
-  });
-
   return (
     <GalleryContainer>
       <GalleryList onScroll={eventScroll} ref={galleryList}>
@@ -51,11 +46,6 @@ const GalleryProject = () => {
         ))}
       </GalleryList>
       <GalleryTitle>{ data[activeProject].title }</GalleryTitle>
-      <GalleryDots>
-        { data.map((item, i) => (
-          <GalleryDotsItem key={i} isActive={i === activeProject}/>
-        ))}
-      </GalleryDots>
     </GalleryContainer>
   )
 };

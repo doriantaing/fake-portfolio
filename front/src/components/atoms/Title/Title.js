@@ -8,9 +8,9 @@ const types = {
   h3: TertiaryTitle
 };
 
-export const Title = ({ children, type, testId }) => {
+const Title = ({ children, type, testId, isUppercase }) => {
   const TitleElement = types[type || "primary"];
-  return <TitleElement data-testid={testId}>{ children }</TitleElement>
+  return <TitleElement data-testid={testId} textUppercase={isUppercase}>{ children }</TitleElement>
 };
 
 Title.defaultProps = {
@@ -20,5 +20,8 @@ Title.defaultProps = {
 Title.propTypes = {
   children: PropTypes.string,
   type: PropTypes.oneOf(Object.keys(types)).isRequired,
-  testId: PropTypes.string
+  testId: PropTypes.string,
+  isUppercase: PropTypes.bool
 };
+
+export default Title;

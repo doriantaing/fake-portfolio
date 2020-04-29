@@ -38,7 +38,7 @@ const StyledText = styled.p`
   color: ${ props => colors[props.color] };
 `;
 
-export const Text = ({ children, type, color, testId  }) => (
+const Text = ({ children, type, color, testId  }) => (
   <StyledText
     type={type}
     color={color}
@@ -59,3 +59,5 @@ Text.propTypes = {
   color: PropTypes.oneOf(Object.keys(colors)).isRequired,
   testId: PropTypes.string
 };
+
+export default Text;
