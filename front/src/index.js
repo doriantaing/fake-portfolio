@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { loadFonts } from './helpers/fonts.js';
+import { loadFonts } from "./styles/theme";
 
 ReactDOM.render(
   <React.StrictMode>

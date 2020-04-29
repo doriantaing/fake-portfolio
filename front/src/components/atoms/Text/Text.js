@@ -1,34 +1,33 @@
 import React from "react";
-import { Colors } from "helpers/colors";
-import { Fonts } from "helpers/fonts";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { theme } from "styles/theme";
 
 const types = {
   defaultText: {
     fontSize: '16px',
     lineHeight: '24px',
     fontWeight: 'normal',
-    fontFamily: Fonts.questrial
+    fontFamily: theme.fonts.questrial
   },
   mediumText: {
     fontSize: '16px',
     lineHeight: '24px',
     fontWeight: 900,
-    fontFamily: Fonts.redHat
+    fontFamily: theme.fonts.redHat
   },
   smallText: {
     fontSize: '14px',
     lineHeight: '24px',
     fontWeight: 'normal',
-    fontFamily: Fonts.redHat
+    fontFamily: theme.fonts.redHat
   }
 };
 
 const colors = {
-  primary: Colors.black,
-  secondary: Colors.red,
-  tertiary: Colors.grey
+  primary: theme.colors.black,
+  secondary: theme.colors.red,
+  tertiary: theme.colors.grey
 };
 
 const StyledText = styled.p`
