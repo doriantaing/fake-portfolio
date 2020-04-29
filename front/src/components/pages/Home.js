@@ -13,20 +13,18 @@ const Home = () => {
     allProjects().then(data => setProjects(data))
   }, []);
 
+  if (!projectsData) {
+    return <p>Loading...</p>
+  }
+
   return (
-    <div>
+    <>
       <Header />
-      { !projectsData ? (
-        <p>Loading...</p>
-      ) : (
-        <>
-          <GalleryProject data={projectsData} />
-          <Container>
-            <ContactSection />
-          </Container>
-        </>
-      )}
-    </div>
+      <GalleryProject data={projectsData} />
+      <Container>
+        <ContactSection />
+      </Container>
+    </>
   )
 };
 

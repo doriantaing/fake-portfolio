@@ -7,10 +7,10 @@ const StyledNav = styled.header`
   font-size: 16px;
   color: ${ props => props.theme.colors.black };
   display : flex;
-  width : 100%;
+  width : calc(100% - 12rem);
   justify-content: space-between;
-  padding-right: 96px;
-  padding-left: 96px;
+  padding-right: 6rem;
+  padding-left: 6rem;
   cursor : pointer;
 `;
 
@@ -26,6 +26,12 @@ const NavRight = styled.div`
   display: flex;
 `;
 
+const NavItem = styled.div`
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+`;
+
 
 export const Header = () => (
     <StyledNav>
@@ -33,9 +39,15 @@ export const Header = () => (
             <Text color={theme.colors.darkblue} type="smallText">Agency</Text>
         </NavLeft>
         <NavRight>
-            <Text color={theme.colors.black} type="buttonNav">Work</Text>
-            <Text color={theme.colors.black} type="buttonNav">About</Text>
-            <Text color={theme.colors.black} type="smallText">Contact</Text>
+            <NavItem>
+                <Text color="blue" type="smallText">Work</Text>
+            </NavItem>
+            <NavItem>
+                <Text color="blue" type="smallText">About</Text>
+            </NavItem>
+            <NavItem>
+                <Text color="blue" type="smallText">Contact</Text>
+            </NavItem>
         </NavRight>
     </StyledNav>
 );
