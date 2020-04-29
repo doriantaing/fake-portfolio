@@ -34,7 +34,8 @@ const types = {
 const colors = {
   primary: theme.colors.black,
   secondary: theme.colors.red,
-  tertiary: theme.colors.grey
+  tertiary: theme.colors.grey,
+  blue: theme.colors.blue
 };
 
 const StyledText = styled.p`

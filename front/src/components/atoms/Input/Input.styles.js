@@ -11,7 +11,7 @@ export const InputLabel = styled.label`
   left: 16px;
   top: ${ props => props.isFocus ? 0 : "50%"};
   transform: translateY(-50%);
-  background: ${ props => props.isFocus ? props.theme.colors .white : "transparent" };
+  background: ${ props => props.isFocus ? props.theme.colors.white : "transparent" };
   pointer-events: none;
   transition: .5s;
 `;
