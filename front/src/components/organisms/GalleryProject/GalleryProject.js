@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as PropTypes from "prop-types";
 import {
-  GalleryContainer, GalleryDescription,
+  GalleryContainer, GalleryDescription, GalleryFooter,
   GalleryImg,
   GalleryList,
   GalleryListItem,
@@ -9,6 +9,7 @@ import {
 import SliderDots from "components/atoms/SliderDots/SliderDots";
 import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
 import Title from "components/atoms/Title/Title";
+import Text from "components/atoms/Text/Text";
 
 const GalleryProject = ({ data }) => {
   const [activeProject, setActive] = useState(0);
@@ -37,7 +38,10 @@ const GalleryProject = ({ data }) => {
         />
         <Title type="projectTitle" isUppercase={true}>{ projectTitle }</Title>
       </GalleryDescription>
-      <SliderDots activeSlide={activeProject} slideData={data} />
+      <GalleryFooter>
+        <SliderDots activeSlide={activeProject} slideData={data} />
+        <Text type="smallText" color="tertiary">Scroll down</Text>
+      </GalleryFooter>
     </GalleryContainer>
   )
 };

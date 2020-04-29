@@ -17,12 +17,12 @@ const StyledButton = styled.button`
 
 const Button = ({ children }) => (
     <StyledButton>
-        <Text color={theme.colors.white} type="mediumText">{ children }</Text>
+        <Text color="white" type="mediumText">{ children }</Text>
     </StyledButton>
 );
 
 Button.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
 };
 
 export default Button;
