@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "./Input";
 
 export default {
@@ -6,4 +6,11 @@ export default {
   component: Input
 };
 
-export const DefaultInput = () => <Input  inputType="text"  label="Label" value="Title"/>;
+export const DefaultInput = () => {
+  const [inputValue, setInputValue] = useState("");
+  const onChange = (e) => setInputValue(e.target.value);
+
+  return (
+    <Input inputType="text"  label="Label" value={inputValue} changeEvent={onChange}/>
+  )
+};

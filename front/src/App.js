@@ -13,7 +13,6 @@ import { ThemeProvider } from "styled-components";
 
 
 const App = () => {
-  console.log(theme);
   return (
     <Router>
       <ThemeProvider theme={theme}>

@@ -2,13 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { InputContainer, InputLabel, StyledInput } from "./Input.styles";
 
-const Input = ({ label, value, inputType }) => {
+const Input = ({ label, value, inputType, changeEvent }) => {
   return (
     <InputContainer>
-      <InputLabel>{ label }</InputLabel>
+      <InputLabel
+        isFocus={ value !== "" }
+      >
+        { label }
+      </InputLabel>
       <StyledInput
         type={inputType}
         value={value}
+        onChange={changeEvent}
+        isFocus={value !== ""}
       />
     </InputContainer>
   )
@@ -17,7 +23,8 @@ const Input = ({ label, value, inputType }) => {
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  inputType: PropTypes.oneOf(['text', 'email', 'password']).isRequired
+  inputType: PropTypes.oneOf(['text', 'email', 'password']).isRequired,
+  changeEvent: PropTypes.func.isRequired
 };
 
 export default Input;

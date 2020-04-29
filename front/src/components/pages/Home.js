@@ -1,9 +1,10 @@
 import React from "react";
+import GalleryProject from "../organisms/GalleryProject/GalleryProject";
 
 const Home = () => {
   return (
     <div>
-      Home
+      <GalleryProject />
     </div>
   )
 };

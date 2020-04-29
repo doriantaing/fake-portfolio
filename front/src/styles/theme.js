@@ -3,9 +3,12 @@ import * as WebFont from "webfontloader";
 // COLORS
 const colors = {
   black: '#1F1F1F',
-  grey: '#9294A0',
   red: '#D74850',
-  blue: '#1A73E8'
+  blue: '#1A73E8',
+  grey: '#9294A0',
+  lightGrey: '#E7E7E7',
+  disabled: '#F5F5F5',
+  white: '#FFFFFF',
 };
 
 // FONTS
