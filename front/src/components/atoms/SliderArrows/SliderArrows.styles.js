@@ -6,29 +6,47 @@ export const ArrowsContainer = styled.div`
   margin-top: 1rem;
 `;
 
-export const ArrowLeft = styled(PrevIcon)`
+export const ArrowLeft = styled.button`
   opacity: ${ props => props.isDisabled ? .5 : 1 };
-  pointer-events: ${ props => props.isDisabled ? "none" : "normal" };
-  fill: ${ props => props.theme.colors.white };
-  width: 20px;
-  height: 20px;
+  pointer-events: ${ props => props.isDisabled ? "none" : "inherit" };
+  border: none;
   background: ${ props => props.theme.colors.blue };
   border-radius: 50%;
-  padding: .5rem;
   cursor: pointer;
   transition: .5s;
   margin-right: 1rem;
+  padding: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  outline: none;
 `;
 
-export const ArrowRight = styled(NextIcon)`
-  opacity: ${ props => props.isDisabled ? .5 : 1 };
-  pointer-events: ${ props => props.isDisabled ? "none" : "normal" };
+export const IconArrowLeft = styled(PrevIcon)`
   fill: ${ props => props.theme.colors.white };
   width: 20px;
   height: 20px;
+`;
+
+export const ArrowRight = styled.button`
+  opacity: ${ props => props.isDisabled ? .5 : 1 };
+  pointer-events: ${ props => props.isDisabled ? "none" : "inherit" };
+  border: none;
   background: ${ props => props.theme.colors.blue };
   border-radius: 50%;
-  padding: .5rem;
   cursor: pointer;
   transition: .5s;
+  margin-right: 1rem;
+  padding: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  outline: none;
+`;
+
+
+export const IconArrowRight = styled(NextIcon)`
+  fill: ${ props => props.theme.colors.white };
+  width: 20px;
+  height: 20px;
 `;

@@ -1,12 +1,16 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, ArrowsContainer } from "./SliderArrows.styles";
+import { ArrowLeft, ArrowRight, ArrowsContainer, IconArrowLeft, IconArrowRight } from "./SliderArrows.styles";
 import PropsTypes from "prop-types";
 
 const SliderArrows = ({ sliderLength, currentSlide, prevAction, nextAction }) => {
   return (
     <ArrowsContainer>
-      <ArrowLeft onClick={() => prevAction(true)} isDisabled={currentSlide === 0} />
-      <ArrowRight onClick={() => nextAction(false)} isDisabled={currentSlide === sliderLength - 1} />
+      <ArrowLeft onClick={() => prevAction(true)} isDisabled={currentSlide === 0}>
+        <IconArrowLeft />
+      </ArrowLeft>
+      <ArrowRight onClick={() => nextAction(false)} isDisabled={currentSlide === sliderLength - 1}>
+        <IconArrowRight />
+      </ArrowRight>
     </ArrowsContainer>
   )
 };
