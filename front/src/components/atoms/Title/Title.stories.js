@@ -1,30 +1,14 @@
-import { Title } from "./title";
+import Title from "./Title";
 import React from "react";
-import { DescriptionText } from "stories/DescriptionText";
 
 export default {
   title: `Atoms/Title`
 };
 
-export const h1 = () => (
-  <div>
-    <Title category="primary">Title/H1</Title>
-    <DescriptionText fontFamily="Red Hat Display" fontSize="38px" fontWeight="Black" lineHeight="auto"/>
-  </div>
-);
-export const h2 = () => (
-  <div>
-    <Title category="secondary">Title/H2</Title>
-    <DescriptionText fontFamily="Red Hat Display" fontSize="32px" fontWeight="Black" lineHeight="42"/>
-  </div>
-);
-export const h3 = () => (
-  <div>
-    <Title category="tertiary">Title/H3</Title>
-    <DescriptionText fontFamily="Red Hat Display" fontSize="24px" fontWeight="Black" lineHeight="32"/>
-  </div>
-);
+export const H1 = () => <Title type="h1" testId="h1-title">Title/H1</Title>;
 
-export const projectTitle = () => (
-    <Title category={"projectTitle"}>01/Project Title</Title>
-);
+export const H2 = () => <Title type="h2" testId="h2-title">Title/H2</Title>;
+
+export const H3 = () => <Title type="h3" testId="h3-title">Title/H3</Title>;
+
+export const ProjectTitle = () => <Title type="projectTitle" testId="project-title">01/Project Title</Title>;

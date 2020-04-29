@@ -3,6 +3,7 @@ import { Container } from "components/layouts/container";
 
 export const GalleryContainer = styled(Container)`
   margin-right: 0;
+  overflow: hidden;
 `;
 
 export const GalleryList = styled.ul`
@@ -34,4 +35,10 @@ export const GalleryImg = styled.img`
   transition: .5s;
 `;
 
-export const GalleryTitle = styled.h2``;
+export const GalleryDescription = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-right: 6rem;
+  width: 506px;
+`;

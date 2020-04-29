@@ -27,7 +27,7 @@ const types = {
     lineHeight: '24px',
     fontWeight: 'normal',
     fontFamily: theme.fonts.redHat,
-        marginRight: '32px',
+    marginRight: '32px',
   }
 };
 
