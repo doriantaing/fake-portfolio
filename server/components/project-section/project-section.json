@@ -13,7 +13,7 @@
       "type": "richtext"
     },
     "img": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -22,6 +22,9 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "rowReverse": {
+      "type": "boolean"
     }
   }
 }

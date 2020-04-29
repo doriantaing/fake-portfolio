@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { getProjects, getAboutSection } from "utils/http";
+import React, { useContext, useEffect, useState } from "react";
+import { getAboutSection } from "utils/http";
 import GalleryProject from "components/organisms/GalleryProject/GalleryProject";
 import { Container } from "components/layouts/container";
 import ContactSection from "components/organisms/ContactSection/ContactSection";
 import { Header } from "components/molecules/Header/Header";
 import BlocContent from "components/organisms/BlocContent/BlocContent";
 import About from "components/layouts/about";
+import ProjectContext from "contexts/project.context";
 
 const Home = () => {
-  const [projectsData, setProjects] = useState(null);
   const [aboutData, setAbout] = useState(null);
+  const { projectsData, fetchAllProjects } = useContext(ProjectContext);
 
   useEffect(() => {
-    const allProjects = async() => await getProjects();
+    !projectsData && fetchAllProjects();
     const aboutSection = async() => await getAboutSection();
-    allProjects().then(data => setProjects(data));
+
     aboutSection().then(data => setAbout(data))
-  }, []);
+  }, [projectsData, fetchAllProjects]);
 
   if (!projectsData || !aboutData) {
     return <p>Loading...</p>

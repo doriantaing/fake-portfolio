@@ -2,6 +2,7 @@ import React from "react";
 import Text from "components/atoms/Text/Text";
 import styled from "styled-components";
 import { theme } from "styles/theme";
+import { Link } from 'react-router-dom';
 
 const StyledNav = styled.header`
   font-size: 16px;
@@ -32,11 +33,17 @@ const NavItem = styled.div`
   }
 `;
 
+const NavHome = styled(Link)`
+  text-decoration: none;
+`;
+
 
 export const Header = () => (
     <StyledNav>
         <NavLeft>
-            <Text color={theme.colors.darkblue} type="smallText">Agency</Text>
+            <NavHome to="/">
+                <Text color={theme.colors.darkblue} type="smallText">Agency</Text>
+            </NavHome>
         </NavLeft>
         <NavRight>
             <NavItem>

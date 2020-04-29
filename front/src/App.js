@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import { theme } from "./styles/theme";
+import ProjectProvider from "./contexts/project.provider";
 
 // App Pages
 import Home from "./components/pages/Home";
@@ -16,14 +17,16 @@ const App = () => {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/project/:id">
-            <Project />
-          </Route>
-        </Switch>
+        <ProjectProvider>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/project/:id">
+              <Project />
+            </Route>
+          </Switch>
+        </ProjectProvider>
       </ThemeProvider>
     </Router>
   );
