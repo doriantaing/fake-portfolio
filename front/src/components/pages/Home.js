@@ -1,11 +1,16 @@
 import React from "react";
-import GalleryProject from "../organisms/GalleryProject/GalleryProject";
+import GalleryProject from "components/organisms/GalleryProject/GalleryProject";
+import { Container } from "components/layouts/container";
+import ContactSection from "components/organisms/ContactSection/ContactSection";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <GalleryProject />
-    </div>
+      <Container>
+        <ContactSection />
+      </Container>
+    </>
   )
 };
 
