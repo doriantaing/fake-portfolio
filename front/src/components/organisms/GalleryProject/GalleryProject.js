@@ -6,25 +6,11 @@ import {
   GalleryListItem,
   GalleryTitle
 } from "./GalleryProject.styles";
-import TempImage from 'assets/img/temp-project1.png';
 import SliderDots from "components/atoms/SliderDots/SliderDots";
 import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
+import * as PropTypes from "prop-types";
 
-const GalleryProject = () => {
-  const data = [
-    {
-      title: 'Project 1',
-      img: TempImage
-    },
-    {
-      title: 'Project 2',
-      img: TempImage
-    },
-    {
-      title: 'Project 3',
-      img: TempImage
-    }
-  ];
+const GalleryProject = ({ data }) => {
   const [activeProject, setActive] = useState(0);
   const [listWidth, setListWidth] = useState(0);
   const slideActions = (isPrev = false) => {
@@ -37,7 +23,7 @@ const GalleryProject = () => {
       <GalleryList translateList={listWidth}>
         { data.map((item, i) => (
           <GalleryListItem key={i}>
-            <GalleryImg src={item.img} isActive={i === activeProject}/>
+            <GalleryImg src={process.env.REACT_APP_API_URL + item.main_image.url} isActive={i === activeProject}/>
           </GalleryListItem>
         ))}
       </GalleryList>
@@ -51,6 +37,10 @@ const GalleryProject = () => {
       <SliderDots activeSlide={activeProject} slideData={data} />
     </GalleryContainer>
   )
+};
+
+GalleryProject.propTypes = {
+  data: PropTypes.array.isRequired
 };
 
 export default GalleryProject;

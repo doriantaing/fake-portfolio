@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_project_section_project_sections",
+  "info": {
+    "name": "Project Section",
+    "icon": "cookie-bite"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "img": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
