@@ -1,26 +1,32 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import { theme } from "./styles/theme";
 
-// App components
-import Main from './components/layouts/main';
-import Login from './components/layouts/login';
-import LoginHeader from './components/layouts/login-header';
-import LoginBody from './components/layouts/login-body';
-import { Title } from "./components/atoms/title/title";
-import {Header} from "./components/molecules/header/header";
+// App Pages
+import Home from "./components/pages/Home";
+import Project from "./components/pages/Project";
+import { ThemeProvider } from "styled-components";
+
 
 const App = () => {
   return (
-    <Main>
-        <Header/>
-      {/*<Login>*/}
-        {/*<LoginHeader>*/}
-          {/*<Title category="primary">Title</Title>*/}
-        {/*</LoginHeader>*/}
-        {/*<LoginBody>*/}
-        {/*</LoginBody>*/}
-      {/*</Login>*/}
-    </Main>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/project/:id">
+            <Project />
+          </Route>
+        </Switch>
+      </ThemeProvider>
+    </Router>
   );
-}
+};
 
 export default App;
