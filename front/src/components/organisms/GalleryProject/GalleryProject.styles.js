@@ -12,6 +12,9 @@ export const GalleryList = styled.ul`
   display: flex;
   align-items: center;
   overflow: hidden;
+  transform: translate3d(${ props => props.translateList }px, 0, 0);
+  transition: .5s;
+  width: 2000px;
 `;
 
 export const GalleryListItem = styled.li`

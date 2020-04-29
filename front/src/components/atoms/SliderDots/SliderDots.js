@@ -13,8 +13,8 @@ const SliderDots = ({ activeSlide, slideData }) => {
 };
 
 SliderDots.propTypes = {
-  activeSlide: PropsTypes.number,
-  slideData: PropsTypes.array
+  activeSlide: PropsTypes.number.isRequired,
+  slideData: PropsTypes.array.isRequired
 };
 
 export default SliderDots;
