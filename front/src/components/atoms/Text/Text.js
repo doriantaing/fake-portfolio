@@ -20,7 +20,14 @@ const types = {
     fontSize: '14px',
     lineHeight: '24px',
     fontWeight: 'normal',
-    fontFamily: theme.fonts.redHat
+      fontFamily: theme.fonts.redHat
+  },
+    buttonNav: {
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontWeight: 'normal',
+    fontFamily: theme.fonts.redHat,
+    marginRight: '32px',
   }
 };
 
@@ -35,6 +42,7 @@ const StyledText = styled.p`
   font-family: ${ props => types[props.type].fontFamily};
   font-weight: ${ props => types[props.type].fontWeight};
   line-height: ${ props => types[props.type].lineHeight};
+  margin-right: ${ props => types[props.type].marginRight};
   color: ${ props => colors[props.color] };
 `;
 

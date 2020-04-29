@@ -1,9 +1,8 @@
-import React from "react";
 import Title from "./Title";
+import React from "react";
 
 export default {
-  title: `Atoms|Title`,
-  component: Title
+  title: `Atoms/Title`
 };
 
 export const H1 = () => <Title type="h1" testId="h1-title">Title/H1</Title>;

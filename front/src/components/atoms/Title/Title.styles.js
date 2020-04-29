@@ -7,7 +7,6 @@ export const PrimaryTitle = styled.h1`
     line-height: normal;
     color: ${ props => props.theme.colors.black };
     text-transform: ${ props => props.textUppercase ? "uppercase" : "none" };
-    margin: 0;
 `;
 
 export const SecondaryTitle = styled.h2`
@@ -16,7 +15,6 @@ export const SecondaryTitle = styled.h2`
     font-size: 32px;
     line-height: 42px;
     text-transform: ${ props => props.textUppercase ? "uppercase" : "none" };
-    margin: 0;
 `;
 
 export const TertiaryTitle = styled.h3`
@@ -25,7 +23,6 @@ export const TertiaryTitle = styled.h3`
     font-size: 24px;
     line-height: 32px;
     text-transform: ${ props => props.textUppercase ? "uppercase" : "none" };
-    margin: 0;
 `;
 
 export const ProjectTitle = styled.h3`

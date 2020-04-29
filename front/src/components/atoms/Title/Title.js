@@ -19,9 +19,8 @@ Title.defaultProps = {
 };
 
 Title.propTypes = {
-  children: PropTypes.string,
-  type: PropTypes.oneOf(Object.keys(types)).isRequired,
-  testId: PropTypes.string,
+  children: PropTypes.element.isRequired,
+  type: PropTypes.oneOf(['primary','secondary','tertiary']).isRequired,
   isUppercase: PropTypes.bool
 };
 
