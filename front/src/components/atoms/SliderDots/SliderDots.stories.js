@@ -1,20 +1,11 @@
-import React from 'react';
-import { GalleryDots, GalleryDotsItem } from "./SliderDots.styles";
-import PropsTypes from "prop-types";
+import SliderDots from "./SliderDots";
+import React from "react";
 
-const SliderDots = ({ activeSlide, slideData }) => {
-  return (
-    <GalleryDots>
-      { slideData.map((item, i) => (
-        <GalleryDotsItem key={i} isActive={i === activeSlide}/>
-      ))}
-    </GalleryDots>
-  )
-};
+export default {
+  title: 'Atoms|SliderDots',
+  component: SliderDots
+}
 
-SliderDots.PropsTypes = {
-  activeSlide: PropsTypes.number,
-  slideData: PropsTypes.array
-};
+const data = [0, 1, 2];
 
-export default SliderDots;
+export const Dots = () => <SliderDots  slideData={data} activeSlide={0} />;

@@ -7,10 +7,22 @@ export default {
 };
 
 export const DefaultInput = () => {
-  const [inputValue, setInputValue] = useState("");
-  const onChange = (e) => setInputValue(e.target.value);
+  const [inputValue, setInputValue] = useState({
+    text: ""
+  });
+  const onChange = (_key, _value) => {
+    const newValue = { ..._value };
+    newValue[_key] = _value;
+    setInputValue(newValue);
+  };
 
   return (
-    <Input inputType="text"  label="Label" value={inputValue} changeEvent={onChange}/>
+    <Input
+      inputType="text"
+      label="Label"
+      value={inputValue.text}
+      changeEvent={onChange}
+      fieldKey="text"
+    />
   )
 };

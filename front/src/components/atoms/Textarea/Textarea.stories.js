@@ -1,41 +1,27 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import Textarea from "./Textarea";
 
-const StyledArea = styled.textarea`
-  border: 1px solid ${ props => props.isFocus ? props.theme.colors.blue : props.theme.colors.lightGrey };
-  background: ${ props => props.isFocus ? props.theme.colors.white : props.theme.colors.disabled };
-  padding: 1.5rem 1rem;
-  font-size: 16px;
-  color: ${ props => props.theme.colors.black };
-  font-family: ${ props => props.theme.fonts.questrial };
-  line-height: 26px;
-  min-width: 498px;
-  min-height: 178px;
-  border-radius: .5rem;
-  outline: none;
-  transition: .5s;
-  &::placeholder {
-    color: ${ props => props.theme.colors.grey };
-  }
-`;
+export default {
+  title: 'Atoms|Textarea',
+  component: Textarea
+}
 
-const Textarea = ({ placeholder, value, changeEvent, fieldKey }) => {
+export const DefaultTextarea = () => {
+  const [value, setValue] = useState({
+    textarea: ''
+  });
+  const onChange = (_key, _value) => {
+    const newValue = { ..._value };
+    newValue[_key] = _value;
+    setValue(newValue);
+  };
+
   return (
-    <StyledArea
-      placeholder={placeholder}
-      value={value}
-      onChange={e => changeEvent(fieldKey, e.target.value)}
-      isFocus={value !== ""}
+    <Textarea
+      placeholder="Placeholder"
+      value={value.textarea}
+      changeEvent={onChange}
+      fieldKey="textarea"
     />
   )
 };
-
-Textarea.PropsTypes = {
-  placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  fieldKey: PropTypes.string.isRequired,
-  changeEvent: PropTypes.func.isRequired,
-};
-
-export default Textarea;
