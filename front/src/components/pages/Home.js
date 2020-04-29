@@ -3,6 +3,7 @@ import GalleryProject from "components/organisms/GalleryProject/GalleryProject";
 import { Container } from "components/layouts/container";
 import ContactSection from "components/organisms/ContactSection/ContactSection";
 import { getProjects } from "utils/http";
+import { Header } from "components/molecules/Header/Header";
 
 const Home = () => {
   const [projectsData, setProjects] = useState(null);
@@ -14,6 +15,7 @@ const Home = () => {
 
   return (
     <div>
+      <Header />
       { !projectsData ? (
         <p>Loading...</p>
       ) : (
