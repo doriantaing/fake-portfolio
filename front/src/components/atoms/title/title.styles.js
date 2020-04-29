@@ -23,3 +23,11 @@ export const TertiaryTitle = styled.h3`
     font-size: 24px;
     line-height: 32px;
 `;
+
+export const ProjectTitle = styled.h3`
+    font-family: ${ Fonts.redHat };
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    color: ${Colors.darkblue}
+`;

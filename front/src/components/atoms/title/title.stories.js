@@ -24,3 +24,7 @@ export const h3 = () => (
     <DescriptionText fontFamily="Red Hat Display" fontSize="24px" fontWeight="Black" lineHeight="32"/>
   </div>
 );
+
+export const projectTitle = () => (
+    <Title category={"projectTitle"}>01/Project Title</Title>
+);

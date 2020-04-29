@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PrimaryTitle, SecondaryTitle, TertiaryTitle } from './title.styles';
+import { PrimaryTitle, SecondaryTitle, TertiaryTitle, ProjectTitle } from './title.styles';
 
 const categories = {
   primary: PrimaryTitle,
   secondary: SecondaryTitle,
-  tertiary: TertiaryTitle
+  tertiary: TertiaryTitle,
+    projectTitle: ProjectTitle,
 };
 
 export const Title = ({ children, category }) => {
