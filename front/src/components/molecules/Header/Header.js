@@ -3,6 +3,7 @@ import Text from "components/atoms/Text/Text";
 import styled from "styled-components";
 import { theme } from "styles/theme";
 import { Link } from 'react-router-dom';
+import { scrollToSection } from "../../../utils/windowScroll";
 
 const StyledNav = styled.header`
   font-size: 16px;
@@ -28,6 +29,9 @@ const NavRight = styled.div`
 `;
 
 const NavItem = styled.div`
+  p {
+    cursor: pointer;
+  }
   &:not(:last-child) {
     margin-right: 2rem;
   }
@@ -49,10 +53,10 @@ export const Header = () => (
             <NavItem>
                 <Text color="blue" type="smallText">Work</Text>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={() => scrollToSection(0)}>
                 <Text color="blue" type="smallText">About</Text>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={() => scrollToSection(1)}>
                 <Text color="blue" type="smallText">Contact</Text>
             </NavItem>
         </NavRight>

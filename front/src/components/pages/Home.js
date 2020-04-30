@@ -29,7 +29,7 @@ const Home = () => {
       <Header />
       <GalleryProject data={projectsData} />
       <Container>
-        <About>
+        <About className="about-section">
           { aboutData ? (
             <BlocContent
               rowReverse={true}

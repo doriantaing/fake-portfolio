@@ -32,7 +32,7 @@ const ContactSection = () => {
   };
 
   return (
-    <Contact>
+    <Contact className="contact-section">
       <ContactHeader>
         <Title type="h3" isUppercase={true}>Contact Us</Title>
       </ContactHeader>
