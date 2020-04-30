@@ -12,7 +12,6 @@ import Title from "components/atoms/Title/Title";
 import Text from "components/atoms/Text/Text";
 import { Link } from "react-router-dom";
 import { Container } from "components/layouts/container";
-import { API_URL } from "utils/http";
 
 const GalleryProject = ({ data }) => {
   const [activeProject, setActive] = useState(0);
