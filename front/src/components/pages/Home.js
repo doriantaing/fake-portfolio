@@ -7,6 +7,7 @@ import { Header } from "components/molecules/Header/Header";
 import BlocContent from "components/organisms/BlocContent/BlocContent";
 import About from "components/layouts/about";
 import ProjectContext from "contexts/project.context";
+import Loading from "components/layouts/loading";
 
 const Home = () => {
   const [aboutData, setAbout] = useState(null);
@@ -20,7 +21,7 @@ const Home = () => {
   }, [projectsData, fetchAllProjects]);
 
   if (!projectsData || !aboutData) {
-    return <p>Loading...</p>
+    return <Loading>Loading...</Loading>
   }
 
   return (
@@ -29,12 +30,16 @@ const Home = () => {
       <GalleryProject data={projectsData} />
       <Container>
         <About>
-          <BlocContent
-            rowReverse={true}
-            title={aboutData.title}
-            text={aboutData.text}
-            image={aboutData.image.url}
-          />
+          { aboutData ? (
+            <BlocContent
+              rowReverse={true}
+              title={aboutData.title}
+              text={aboutData.text}
+              image={aboutData.image.url}
+            />
+          ) : (
+            <p>No data available for contact section. Please go to http://localhost:1337/admin and fill in data.</p>
+          )}
         </About>
         <ContactSection />
       </Container>

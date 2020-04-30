@@ -12,7 +12,6 @@ import Home from "./components/pages/Home";
 import Project from "./components/pages/Project";
 import { ThemeProvider } from "styled-components";
 
-
 const App = () => {
   return (
     <Router>

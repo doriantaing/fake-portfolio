@@ -6,6 +6,7 @@ import BlocContent from "../organisms/BlocContent/BlocContent";
 import { Container } from "../layouts/container";
 import ProjectBloc from "../layouts/project-bloc";
 import ProjectBody from "../layouts/project-body";
+import Loading from "../layouts/loading";
 
 const Project = () => {
   const { projectsData, fetchAllProjects } = useContext(ProjectContext);
@@ -17,7 +18,7 @@ const Project = () => {
   });
 
   if (!projectsData) {
-    return <p>Loading...</p>
+    return <Loading>Loading...</Loading>
   }
 
   return (

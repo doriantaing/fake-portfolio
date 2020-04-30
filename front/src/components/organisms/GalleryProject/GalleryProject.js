@@ -11,6 +11,8 @@ import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
 import Title from "components/atoms/Title/Title";
 import Text from "components/atoms/Text/Text";
 import { Link } from "react-router-dom";
+import { Container } from "components/layouts/container";
+import { API_URL } from "utils/http";
 
 const GalleryProject = ({ data }) => {
   const [activeProject, setActive] = useState(0);
@@ -19,7 +21,16 @@ const GalleryProject = ({ data }) => {
     setListWidth(isPrev ? listWidth + 530 : listWidth - 530);
     setActive(isPrev ? activeProject - 1 : activeProject + 1);
   };
-  const projectTitle = `0${data[activeProject].id}/ ${data[activeProject].title}`;
+  const projectTitle = data.length > 0 && `0${data[activeProject].id}/ ${data[activeProject].title}`;
+
+
+  if (data.length === 0) {
+    return (
+      <Container>
+        <div>No data availaible for gallery projects. Please go to http://localhost:1337/admin and fill in data.</div>
+      </Container>
+    )
+  }
 
   return (
     <GalleryContainer>
@@ -27,7 +38,7 @@ const GalleryProject = ({ data }) => {
         { data.map((item, i) => (
           <GalleryListItem key={i}>
             <Link to={`project/${i}`}>
-              <GalleryImg src={process.env.REACT_APP_API_URL + item.main_image.url} isActive={i === activeProject}/>
+              <GalleryImg src={API_URL + item.main_image.url} isActive={i === activeProject}/>
             </Link>
           </GalleryListItem>
         ))}
