@@ -38,7 +38,7 @@ const GalleryProject = ({ data }) => {
         { data.map((item, i) => (
           <GalleryListItem key={i}>
             <Link to={`project/${i}`}>
-              <GalleryImg src={API_URL + item.main_image.url} isActive={i === activeProject}/>
+              <GalleryImg src={item.main_image.url} isActive={i === activeProject}/>
             </Link>
           </GalleryListItem>
         ))}

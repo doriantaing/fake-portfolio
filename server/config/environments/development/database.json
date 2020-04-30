@@ -4,12 +4,14 @@
     "default": {
       "connector": "bookshelf",
       "settings": {
-        "client": "sqlite",
-        "filename": ".tmp/data.db"
+        "client": "postgres",
+        "database": "hetic-fake-portfolio",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "username": "doriantaing",
+        "password": "root"
       },
-      "options": {
-        "useNullAsDefault": true
-      }
+      "options": {}
     }
   }
 }

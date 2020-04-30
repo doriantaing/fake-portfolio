@@ -3,7 +3,6 @@ import { ContentContainer, ContentImg, ContentLeft, ContentRight, ContentTitle }
 import Title from "components/atoms/Title/Title";
 import Text from "components/atoms/Text/Text";
 import PropTypes from 'prop-types';
-import { API_URL } from "utils/http";
 
 const BlocContent = ({ rowReverse, title, text, image }) => {
   return (
@@ -15,7 +14,7 @@ const BlocContent = ({ rowReverse, title, text, image }) => {
         <Text color="tertiary">{ text }</Text>
       </ContentLeft>
       <ContentRight>
-        <ContentImg src={API_URL + image} />
+        <ContentImg src={image} />
       </ContentRight>
     </ContentContainer>
   )
