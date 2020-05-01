@@ -28,6 +28,7 @@ defineFeature(contactfeature, test => {
         when(/^I type ("maxime") as username$/, usernameValue => {
             name = getElement('name-field');
             fireEvent.change(name, {target : {value : usernameValue}})
+            expect(name.value).toBe(usernameValue);
         });
         then(/^Contact form button should still be disabled$/, () => {
             expect(button.disabled).toBe(true);
@@ -35,6 +36,7 @@ defineFeature(contactfeature, test => {
         when(/I type ("maxime@gmail.com") as email$/, emailValue => {
             email = getElement('email-field');
             fireEvent.change(email, {target : {value : emailValue}})
+            expect(email.value).toBe(emailValue);
         });
         then(/^Contact form button should still be disabled$/, () => {
             expect(button.disabled).toBe(true);
@@ -42,6 +44,7 @@ defineFeature(contactfeature, test => {
         when(/^I type ("Bonjour je suis intéressé par votre service") as message$/, messageValue => {
             message = getElement('message-field');
             fireEvent.change(message, {target : {value : messageValue}})
+            expect(message.value).toBe(messageValue);
         });
         then(/^Contact form button should be enabled$/, () => {
             expect(button.disabled).toBe(false);
