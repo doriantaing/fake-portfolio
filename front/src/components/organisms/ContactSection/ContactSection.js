@@ -62,7 +62,7 @@ const ContactSection = () => {
             fieldKey="textarea"
           />
           <ContactSubmit>
-            <Button disabled={true} data-testid='contact-button'>Send</Button>
+            <Button disabled={!formState.name && !formState.email && !formState.textarea} data-testid='contact-button'>Send</Button>
           </ContactSubmit>
         </ContactForm>
         <ContactMap>
