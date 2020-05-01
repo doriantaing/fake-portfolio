@@ -27,6 +27,7 @@ const Textarea = ({ placeholder, value, changeEvent, fieldKey }) => {
       value={value}
       onChange={e => changeEvent(fieldKey, e.target.value)}
       isFocus={value !== ""}
+      data-testid="default-textarea"
     />
   )
 };
