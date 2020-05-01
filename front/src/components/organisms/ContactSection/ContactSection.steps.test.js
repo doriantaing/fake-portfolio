@@ -23,7 +23,7 @@ defineFeature(contactfeature, test => {
         });
         given(/^I am a user who want to send a message to the site manager$/, () => {
             button = getElement('default-button');
-            // expect(button.disabled).toBe(true);
+            expect(button.disabled).toBe(true);
         });
         when(/^I type ("maxime") as username$/, usernameValue => {
             name = getElement('name-field');
