@@ -2,10 +2,12 @@ import { defineFeature, loadFeature } from 'jest-cucumber';
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect';
-
 import ContactSection from '../ContactSection/ContactSection';
 
 const contactfeature = loadFeature('../front/src/components/organisms/ContactSection/ContactSection.feature');
+
+import { theme } from "../../../styles/theme";
+import {ThemeProvider} from "styled-components";
 
 defineFeature(contactfeature, test => {
     test('send message from contact form', ({given, when, then, and}) => {
@@ -16,8 +18,8 @@ defineFeature(contactfeature, test => {
         let message;
 
         beforeEach(() => {
-            const {getTestId} = render(<ContactSection/>);
-            getElement = getTestId;
+            const {getByTestId} = render(<ThemeProvider theme={theme}><ContactSection /></ThemeProvider>);
+            getElement = getByTestId;
         });
         given(/^I am a user who want to send a message to the site manager$/, () => {
             button = getElement('contact-button');

@@ -43,7 +43,7 @@ const ContactSection = () => {
             changeEvent={onChange}
             inputType="text"
             fieldKey="name"
-            data-test='name-field'
+            data-testid='name-field'
             value={formState.name}
           />
           <Input
@@ -51,18 +51,18 @@ const ContactSection = () => {
             changeEvent={onChange}
             inputType="email"
             fieldKey="email"
-            data-test='email-field'
+            data-testid='email-field'
             value={formState.email}
           />
           <Textarea
             placeholder="Message"
             value={formState.textarea}
             changeEvent={onChange}
-            data-test='message-field'
+            data-testid='message-field'
             fieldKey="textarea"
           />
           <ContactSubmit>
-            <Button disabled={!formState.name && !formState.email && !formState.textarea} data-test='contact-button'>Send</Button>
+            <Button disabled={true} data-testid='contact-button'>Send</Button>
           </ContactSubmit>
         </ContactForm>
         <ContactMap>

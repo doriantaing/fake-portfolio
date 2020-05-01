@@ -14,8 +14,8 @@ const StyledButton = styled.button`
   border: none;
 `;
 
-const Button = ({ children }) => (
-    <StyledButton>
+const Button = ({ children, ...props }) => (
+    <StyledButton {...props}>
         <Text color="white" type="mediumText">{ children }</Text>
     </StyledButton>
 );
