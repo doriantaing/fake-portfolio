@@ -14,14 +14,15 @@ const StyledButton = styled.button`
   border: none;
 `;
 
-const Button = ({ children, ...props }) => (
-    <StyledButton {...props}>
+const Button = ({ children, clickEvent }) => (
+    <StyledButton onClick={clickEvent} data-testid="default-button">
         <Text color="white" type="mediumText">{ children }</Text>
     </StyledButton>
 );
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  clickEvent: PropTypes.func
 };
 
 export default Button;

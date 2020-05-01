@@ -15,16 +15,17 @@ const Input = ({ label, value, inputType, changeEvent, fieldKey }) => {
         value={value}
         onChange={e => changeEvent(fieldKey, e.target.value)}
         isFocus={value !== ""}
+        data-testid="default-input"
       />
     </InputContainer>
   )
 };
 
 Input.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  inputType: PropTypes.oneOf(['text', 'email', 'password']).isRequired,
-  changeEvent: PropTypes.func.isRequired,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  inputType: PropTypes.oneOf(['text', 'email', 'password']),
+  changeEvent: PropTypes.func,
   fieldKey: PropTypes.string
 };
 
