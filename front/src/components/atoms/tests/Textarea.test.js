@@ -16,7 +16,7 @@ describe('Renders textarea component', () => {
   test('with default textarea text', () => {
     const { container, getByTestId } = render(
       <ThemeProvider theme={theme}>
-        <Textarea changeEvent={onChange}/>
+        <Textarea changeEvent={onChange} testId="default-textarea" />
       </ThemeProvider>
     );
     expect(container).toBeTruthy();

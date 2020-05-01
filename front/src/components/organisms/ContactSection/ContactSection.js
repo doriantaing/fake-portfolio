@@ -43,7 +43,7 @@ const ContactSection = () => {
             changeEvent={onChange}
             inputType="text"
             fieldKey="name"
-            data-testid='name-field'
+            testId='name-field'
             value={formState.name}
           />
           <Input
@@ -51,14 +51,14 @@ const ContactSection = () => {
             changeEvent={onChange}
             inputType="email"
             fieldKey="email"
-            data-testid='email-field'
+            testId='email-field'
             value={formState.email}
           />
           <Textarea
             placeholder="Message"
             value={formState.textarea}
             changeEvent={onChange}
-            data-testid='message-field'
+            testId='message-field'
             fieldKey="textarea"
           />
           <ContactSubmit>

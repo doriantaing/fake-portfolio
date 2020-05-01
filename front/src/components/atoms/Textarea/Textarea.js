@@ -20,14 +20,14 @@ const StyledArea = styled.textarea`
   }
 `;
 
-const Textarea = ({ placeholder, value, changeEvent, fieldKey }) => {
+const Textarea = ({ placeholder, value, changeEvent, fieldKey, testId }) => {
   return (
     <StyledArea
       placeholder={placeholder}
       value={value}
       onChange={e => changeEvent(fieldKey, e.target.value)}
       isFocus={value !== ""}
-      data-testid="default-textarea"
+      data-testid={testId}
     />
   )
 };
@@ -37,6 +37,7 @@ Textarea.PropsTypes = {
   value: PropTypes.string.isRequired,
   fieldKey: PropTypes.string.isRequired,
   changeEvent: PropTypes.func.isRequired,
+  testId: PropTypes.string
 };
 
 export default Textarea;
