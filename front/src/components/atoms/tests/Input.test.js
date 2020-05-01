@@ -16,7 +16,7 @@ describe('Renders input component', () => {
   test('with default input text', () => {
     const { container, getByTestId } = render(
       <ThemeProvider theme={theme}>
-        <Input changeEvent={onChange}/>
+        <Input changeEvent={onChange} testId="default-input" />
       </ThemeProvider>
     );
     expect(container).toBeTruthy();

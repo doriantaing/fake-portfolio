@@ -2,10 +2,12 @@ import { defineFeature, loadFeature } from 'jest-cucumber';
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect';
-
 import ContactSection from '../ContactSection/ContactSection';
 
 const contactfeature = loadFeature('../front/src/components/organisms/ContactSection/ContactSection.feature');
+
+import { theme } from "../../../styles/theme";
+import {ThemeProvider} from "styled-components";
 
 defineFeature(contactfeature, test => {
     test('send message from contact form', ({given, when, then, and}) => {
@@ -16,16 +18,17 @@ defineFeature(contactfeature, test => {
         let message;
 
         beforeEach(() => {
-            const {getTestId} = render(<ContactSection/>);
-            getElement = getTestId;
+            const {getByTestId} = render(<ThemeProvider theme={theme}><ContactSection /></ThemeProvider>);
+            getElement = getByTestId;
         });
         given(/^I am a user who want to send a message to the site manager$/, () => {
-            button = getElement('contact-button');
+            button = getElement('default-button');
             expect(button.disabled).toBe(true);
         });
         when(/^I type ("maxime") as username$/, usernameValue => {
             name = getElement('name-field');
             fireEvent.change(name, {target : {value : usernameValue}})
+            expect(name.value).toBe(usernameValue);
         });
         then(/^Contact form button should still be disabled$/, () => {
             expect(button.disabled).toBe(true);
@@ -33,6 +36,7 @@ defineFeature(contactfeature, test => {
         when(/I type ("maxime@gmail.com") as email$/, emailValue => {
             email = getElement('email-field');
             fireEvent.change(email, {target : {value : emailValue}})
+            expect(email.value).toBe(emailValue);
         });
         then(/^Contact form button should still be disabled$/, () => {
             expect(button.disabled).toBe(true);
@@ -40,6 +44,7 @@ defineFeature(contactfeature, test => {
         when(/^I type ("Bonjour je suis intéressé par votre service") as message$/, messageValue => {
             message = getElement('message-field');
             fireEvent.change(message, {target : {value : messageValue}})
+            expect(message.value).toBe(messageValue);
         });
         then(/^Contact form button should be enabled$/, () => {
             expect(button.disabled).toBe(false);

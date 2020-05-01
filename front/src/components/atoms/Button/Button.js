@@ -14,8 +14,8 @@ const StyledButton = styled.button`
   border: none;
 `;
 
-const Button = ({ children, clickEvent }) => (
-    <StyledButton onClick={clickEvent} data-testid="default-button">
+const Button = ({ children, clickEvent, ...props }) => (
+    <StyledButton {...props} onClick={clickEvent} data-testid="default-button">
         <Text color="white" type="mediumText">{ children }</Text>
     </StyledButton>
 );
